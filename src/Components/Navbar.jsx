@@ -20,10 +20,7 @@ function Navbar() {
   };
 
   return (
-    <NavLink
-      to="/home"
-      className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-sky-100 to-white shadow-lg"
-    >
+    <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-lg">
       <div className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
         <div className="flex items-center gap-2">
           <img
@@ -139,7 +136,7 @@ function Navbar() {
       </div>
 
       {isOpen && (
-        <div className=":hidden px-6 pb-4 bg-white bg-opacity-95">
+        <div className="px-6 pb-4 bg-white bg-opacity-95">
           <nav className="flex flex-col space-y-4">
             <NavLink
               to="/home"
@@ -239,7 +236,7 @@ function Navbar() {
           </NavLink>
         </div>
       )}
-    </NavLink>
+    </header>
   );
 }
 

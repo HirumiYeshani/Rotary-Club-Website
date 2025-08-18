@@ -13,7 +13,7 @@ const RotarySection = () => {
     {
       title: "Our Purpose in Action",
       content:
-        "Rotary connects 1.4 million members from more than 46,000 clubs worldwide. Their service projects address pressing challenges such as disease prevention, water and sanitation, maternal and child health, basic education and economic development.",
+        "Rotary connects worldwide members from more than 5 counties. Their service projects address pressing challenges such as disease prevention, water and sanitation, maternal and child health, basic education and economic development.",
     },
     {
       title: "Join the Movement",
@@ -27,16 +27,12 @@ const RotarySection = () => {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true, amount:0.1 }}
+      viewport={{ once: true, amount: 0.1 }}
       className="max-w-7xl mx-auto px-4 py-20"
     >
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-          Get to{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600">
-            Know
-          </span>{" "}
-          Us
+          Get to Know Us
         </h2>
         <p className="text-lg text-black max-w-3xl mx-auto">
           Rotary is a global network of community volunteers committed to making

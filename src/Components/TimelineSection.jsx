@@ -1,6 +1,7 @@
+import { motion as Motion } from "framer-motion";
+
 import presidentImage from "../assets/h.png";
 import logo from "../assets/logo.jpeg";
-import { motion as Motion } from "framer-motion";
 
 const PresidentsMessage = () => {
   return (
@@ -14,12 +15,12 @@ const PresidentsMessage = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12 transition-all duration-700">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mt-2">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600">
-              Message
-            </span>{" "}
-            From Our President
+            Message From Our President
           </h2>
-          <div className="mt-4 h-1 w-20 bg-blue-500 mx-auto rounded-full"></div>
+          <p className="text-black text-lg max-w-3xl mx-auto mt-4">
+            Through vision, dedication and unity, we inspire positive change
+            empowering our members and uplifting communities across the globe
+          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 transition-all duration-700 delay-200">
@@ -35,7 +36,7 @@ const PresidentsMessage = () => {
                   Hemantha Weerasinghe
                 </h3>
                 <p className="text-white font-medium text-sm">
-                  President 2023-2024
+                  President 2025-2026
                 </p>
               </div>
             </div>
@@ -44,11 +45,11 @@ const PresidentsMessage = () => {
           <div className="h-full min-h-[320px] bg-white rounded-xl shadow-lg p-6 md:p-8 border border-gray-200 flex flex-col">
             <div className="flex-1 prose-sm text-black space-y-4">
               <p className="leading-relaxed">
-                President PHF Rtn Hemantha Weerasinghe (Lt Col Rtd) expresses
-                gratitude to Past Presidents, Directors, and fellow Rotarians
-                for their dedication and legacy of service. He welcomes the
-                newly appointed leaders, urging them to lead with purpose,
-                innovation, and unity.
+                President PHF Rtn Hemantha Weerasinghe expresses gratitude to
+                Past Presidents, Directors, and fellow Rotarians for their
+                dedication and legacy of service. He welcomes the newly
+                appointed leaders, urging them to lead with purpose, innovation,
+                and unity.
               </p>
               <p className="leading-relaxed">
                 Emphasizing the Rotary motto "Service Above Self," he calls for

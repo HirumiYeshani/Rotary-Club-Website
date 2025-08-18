@@ -5,20 +5,20 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-r from-blue-700 to-blue-900 text-white text-md">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="space-y-5">
+    <footer className="bg-blue-950  text-white">
+      <div className="container px-6 py-12 mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8  mx-auto ">
+          <div className="space-y-4 ">
             <h3 className="text-xl font-bold">About Rotary</h3>
-            <p className="leading-relaxed">
+            <p className="leading-relaxed text-white">
               Rotary unites leaders committed to creating lasting change across
               the globe, in our communities and in ourselves.
             </p>
           </div>
 
-          <div className="space-y-5 md">
+          <div className="space-y-4  lg:ml-10">
             <h3 className="text-xl font-bold">Quick Links</h3>
-            <ul className="space-y-4">
+            <div className="flex flex-col space-y-3">
               {[
                 { name: "Home", path: "/home" },
                 { name: "History", path: "/about/history" },
@@ -26,24 +26,23 @@ const Footer = () => {
                 { name: "Calendar", path: "/calendar" },
                 { name: "Contact Us", path: "/contact" },
               ].map(({ name, path }) => (
-                <li key={name}>
-                  <Link
-                    to={path}
-                    className="hover:text-blue-200 transition-colors duration-300"
-                  >
-                    {name}
-                  </Link>
-                </li>
+                <Link
+                  key={name}
+                  to={path}
+                  className="text-white hover:text-white transition-colors duration-200 flex items-center"
+                >
+                  {name}
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
 
-          <div className="space-y-5">
+          <div className="space-y-4 lg:-translate-x-10">
             <h3 className="text-xl font-bold">Contact Us</h3>
-            <address className="not-italic">
-              <div className="flex items-start mb-3">
+            <address className="not-italic space-y-4 text-white">
+              <div className="flex items-start">
                 <svg
-                  className="w-5 h-5 mr-3 mt-0.5"
+                  className="w-5 h-5 mr-3 mt-0.5 text-white"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -56,9 +55,9 @@ const Footer = () => {
                 <span>Hotel Topaz, Kandy, Sri Lanka</span>
               </div>
 
-              <div className="flex items-center mb-3">
+              <div className="flex items-center">
                 <svg
-                  className="w-5 h-5 mr-3"
+                  className="w-5 h-5 mr-3 text-white"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -67,15 +66,15 @@ const Footer = () => {
                 </svg>
                 <a
                   href="mailto:chandula@allinoneholdings.com"
-                  className="hover:text-blue-200 transition-colors duration-300"
+                  className="hover:text-white transition-colors duration-200"
                 >
-                  chandula@allinoneholdings.com
+                  rckmpresident2015@yahoo.com
                 </a>
               </div>
 
               <div className="flex items-center">
                 <svg
-                  className="w-5 h-5 mr-3"
+                  className="w-5 h-5 mr-3 text-white"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -83,20 +82,23 @@ const Footer = () => {
                 </svg>
                 <a
                   href="tel:+94776722709"
-                  className="hover:text-blue-200 transition-colors duration-300"
+                  className="hover:text-white transition-colors duration-200"
                 >
                   +94 77 672 2709
                 </a>
               </div>
             </address>
+          </div>
 
-            <h4 className="text-md font-semibold mb-3">
-              Follow us on social media
-            </h4>
-            <div className="flex space-x-4">
+          <div className="space-y-4 ">
+            <h3 className="text-xl font-bold">Follow Us</h3>
+            <p className="text-white">
+              Stay connected with our latest updates and events.
+            </p>
+            <div className="flex space-x-4 pt-2">
               <a
                 href="https://www.facebook.com/profile.php?id=100064414492650"
-                className="bg-blue-700 hover:bg-blue-800 text-white p-2 rounded-full transition-colors duration-300"
+                className="bg-blue-700 hover:bg-blue-600 text-white p-3 rounded-lg transition-all duration-300 hover:scale-105"
                 aria-label="Facebook"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -112,7 +114,7 @@ const Footer = () => {
 
               <a
                 href="https://www.instagram.com/rc_kandy_metropolitan/"
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white p-2 rounded-full transition-colors duration-300"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white p-3 rounded-lg transition-all duration-300 hover:scale-105"
                 aria-label="Instagram"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -130,15 +132,32 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="bg-blue-900 py-6">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm mb-2 md:mb-0">
-              © {currentYear} Rotary Club. All rights reserved.
+      <div className="bg-blue-950 py-4">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
+            <p className="text-sm text-white">
+              © {currentYear} Rotary Club Kandy Metropolitan. All rights
+              reserved.
             </p>
-            <p className="text-sm">
+            <div className="flex space-x-6 text-sm">
+              <Link
+                to="/privacy"
+                className="text-white hover:text-white transition-colors duration-200"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                to="/terms"
+                className="text-white hover:text-white transition-colors duration-200"
+              >
+                Terms of Service
+              </Link>
+            </div>
+            <p className="text-sm text-white">
               Powered by{" "}
-              <span className="text-blue-200">All in One IT Solutions</span>
+              <span className="text-white font-medium">
+                All in One IT Solutions
+              </span>
             </p>
           </div>
         </div>

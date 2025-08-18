@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion as Motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
 import join from "../assets/join.jpg";
 
@@ -31,45 +32,47 @@ const JoinUsPage = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    try {
-      const response = await fetch(
-        "https://rotarykandymetropolitan.com/email_join.php",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: new URLSearchParams(formData).toString(),
+    const templateParams = {
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email,
+      phone: formData.phone,
+      profession: formData.profession,
+      address: formData.address,
+      referral: formData.referral || "Not provided",
+      motivation: formData.motivation,
+    };
+
+    emailjs
+      .send(
+        "service_cfznokg",
+        "template_od9fyj7",
+        templateParams,
+        "dYAl2mDt-K6ONW1jA"
+      )
+      .then(
+        (response) => {
+          alert("Thank you for your application! We will contact you soon.");
+          console.log("SUCCESS!", response.status, response.text);
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            phone: "",
+            profession: "",
+            address: "",
+            referral: "",
+            motivation: "",
+          });
+        },
+        (error) => {
+          console.error("FAILED...", error);
+          alert("An error occurred. Please try again later.");
         }
       );
-
-      const result = await response.json();
-
-      if (response.ok) {
-        alert(
-          result.message ||
-            "Thank you for your application! We will contact you soon."
-        );
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          phone: "",
-          profession: "",
-          address: "",
-          referral: "",
-          motivation: "",
-        });
-      } else {
-        alert("Error: " + (result.message || "Failed to send application."));
-      }
-    } catch (error) {
-      alert("An error occurred. Please try again later.");
-      console.error("Submit error:", error);
-    }
   };
 
   const toggleAccordion = (index) => {
@@ -160,6 +163,7 @@ const JoinUsPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Hero Section */}
       <div
         className="relative pt-[100px] h-[calc(70vh-90px)] min-h-[500px] bg-cover bg-center overflow-hidden"
         style={{ backgroundImage: `url(${join})` }}
@@ -185,12 +189,8 @@ const JoinUsPage = () => {
         id="application"
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
       >
-        <h2 className="text-4xl font-bold text-blue-800 mb-8 text-center">
-          Why{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">
-            Join
-          </span>{" "}
-          Rotary
+        <h2 className="text-4xl font-bold text-black mb-8 text-center">
+          Why Join Rotary
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
@@ -198,9 +198,6 @@ const JoinUsPage = () => {
               key={index}
               className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
             >
-              <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                <div className="w-6 h-6 bg-blue-700 rounded-full"></div>
-              </div>
               <h3 className="text-xl font-bold text-blue-800 mb-2">
                 {benefit.title}
               </h3>
@@ -220,11 +217,8 @@ const JoinUsPage = () => {
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white p-8 rounded-xl shadow-lg">
-            <h2 className="text-4xl font-bold text-blue-800 mb-8 text-center">
-              Become a{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">
-                Member
-              </span>
+            <h2 className="text-4xl font-bold text-black mb-8 text-center">
+              Become a Member
             </h2>
 
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -257,7 +251,7 @@ const JoinUsPage = () => {
                       name === "lastName" ||
                       name === "email" ||
                       name === "phone"
-                    } 
+                    }
                   />
                 </div>
               ))}
@@ -290,12 +284,8 @@ const JoinUsPage = () => {
         id="application"
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
       >
-        <h2 className="text-4xl font-bold text-blue-800 mb-12 text-center">
-          What Our{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">
-            Members
-          </span>{" "}
-          Say
+        <h2 className="text-4xl font-bold text-black mb-12 text-center">
+          What Our Members Say
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
@@ -322,11 +312,8 @@ const JoinUsPage = () => {
         className="bg-gray-100 py-16"
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-blue-800 mb-12 text-center">
-            Frequently Asked{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">
-              Questions
-            </span>
+          <h2 className="text-4xl font-bold text-black mb-12 text-center">
+            Frequently Asked Questions
           </h2>
           <div className="space-y-4">
             {faqs.map((faq, index) => (
@@ -356,7 +343,7 @@ const JoinUsPage = () => {
         </div>
       </Motion.div>
 
-      <div className="bg-blue-400 py-16 text-white">
+      <div className="bg-blue-100 py-16 text-black">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to Join?</h2>
           <p className="text-xl mb-8">
@@ -365,7 +352,8 @@ const JoinUsPage = () => {
           </p>
           <a
             href="#application"
-            className="inline-block bg-white text-blue-700 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition duration-300"
+            className="inline-block bg-blue-700 text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-blue-700 hover:border hover:border-blue-700 transition-none
+"
           >
             Apply Now
           </a>

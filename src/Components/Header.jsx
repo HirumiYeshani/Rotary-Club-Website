@@ -22,7 +22,7 @@ const RotaryHero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center ">
             <button
               onClick={() => navigate("/projects1")}
-              className="px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-semibold rounded-full shadow-lg hover:bg-white hover:bg-none hover:text-blue-700 hover:shadow-xl"
+              className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:bg-white hover:bg-none hover:text-blue-700 hover:shadow-xl"
             >
               Explore Our Projects
             </button>

@@ -37,7 +37,7 @@ export default function SecondSection() {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.1  }}
+      viewport={{ once: true, amount: 0.1 }}
       className="relative bg-gradient-to-br from-gray-50 to-blue-50 py-20 px-6 md:px-12 lg:px-24 overflow-hidden"
     >
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
@@ -48,11 +48,7 @@ export default function SecondSection() {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6">
-            Building{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600">
-              Meaningful
-            </span>{" "}
-            Impact
+            Building Meaningful Impact
           </h2>
           <p className="text-black max-w-3xl mx-auto text-lg md:text-xl leading-relaxed">
             We combine service, leadership, and fellowship to create
@@ -89,7 +85,7 @@ export default function SecondSection() {
         <div className="mt-16 text-center">
           <button
             onClick={handleClick}
-            className="px-8 py-3 bg-blue-700 text-white font-semibold rounded-full shadow-lg hover:bg-white hover:text-blue-600 hover:border-2 hover:border-blue-600 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:bg-white hover:text-blue-600 hover:border-2 hover:border-blue-600 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
           >
             Join Our Community
           </button>

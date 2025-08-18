@@ -6,7 +6,7 @@ import Footer from '../Components/Footer';
 function calendar() {
   return (
     <div className="CalendarPage">
-      <Navbar/>
+    <Navbar/>
     <Calendar/>
     <Footer/>
     </div>

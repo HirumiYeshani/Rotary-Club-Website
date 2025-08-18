@@ -142,13 +142,11 @@ const CalendarPage = () => {
           onClick={() => isPast && setSelectedDate(dateStr)}
         >
           <div className="flex justify-between">
-            <span
-              className={`text-sm ${isPast ? "text-black" : "text-blue-400"}`}
-            >
+            <span className={`text-sm ${isPast ? "text-black" : "text-white"}`}>
               {day}
             </span>
             {dayEvents.length > 0 && isPast && (
-              <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+              <span className="w-2 h-2 rounded-full bg-white"></span>
             )}
           </div>
         </div>
@@ -183,11 +181,11 @@ const CalendarPage = () => {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div className="relative flex-grow">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <FiSearch className="text-blue-300" />
+                <FiSearch className="text-black" />
               </div>
               <input
                 type="text"
-                className="block w-full pl-10 pr-3 py-2 border border-blue-300 rounded-md leading-5 bg-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                className="block w-full pl-10 pr-3 py-2 border border-black rounded-md leading-5 bg-white placeholder-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                 placeholder="Search past events..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -196,7 +194,7 @@ const CalendarPage = () => {
 
             <div className="flex flex-col sm:flex-row gap-2">
               <select
-                className="block w-full sm:w-40 px-3 py-2 border border-blue-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                className="block w-full sm:w-40 px-3 py-2 border border-black rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                 value={selectedMonth}
                 onChange={(e) => setSelectedMonth(e.target.value)}
               >
@@ -254,7 +252,7 @@ const CalendarPage = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-7 gap-px bg-blue-200">
+            <div className="grid grid-cols-7 gap-px bg-blue-100">
               {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
                 <div
                   key={day}
@@ -304,7 +302,7 @@ const CalendarPage = () => {
                             {event.description}
                           </p>
                         </div>
-                        <span className="text-xs text-blue-400">
+                        <span className="text-xs text-white">
                           {event.date}
                         </span>
                       </div>

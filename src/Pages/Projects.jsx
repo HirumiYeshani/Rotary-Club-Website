@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../Components/Navbar';
 import ProjectsComponent from '../Components/Projects'; 
-import Footer from '../components/Footer'; 
+import Footer from '../Components/Footer'; 
 
 function ProjectsPage() { 
   return (

@@ -27,7 +27,7 @@ const leaders = {
       image: shenal,
     },
     {
-      title: "Club Secretary",
+      title: "Vice President",
       name: "Rtn. Prof Samath Dharmarathne",
       image: samath,
     },
@@ -163,10 +163,7 @@ export default function Leadership() {
       <div className="px-6 py-12 max-w-7xl mx-auto bg-gray-50">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
-            Our{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700">
-              Leadership
-            </span>
+            Our Leadership
           </h1>
           <p className="text-lg text-black max-w-2xl mx-auto">
             Dedicated professionals serving our community with excellence

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FiSend, FiMail, FiPhone, FiMapPin } from "react-icons/fi";
-
+import emailjs from "emailjs-com";
 import contact from "../assets/contact.jpg";
 
 const ContactPage = () => {
@@ -11,7 +11,7 @@ const ContactPage = () => {
     message: "",
   });
 
-  const [status, setStatus] = useState(null); 
+  const [status, setStatus] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -19,32 +19,37 @@ const ContactPage = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
     setStatus(null);
 
-    try {
-      const response = await fetch("https://rotarykandymetropolitan.com/email.contact.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+    emailjs
+      .send(
+        "service_cfznokg",
+        "template_od9fyj7",
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
         },
-        body: JSON.stringify(formData),
+        "dYAl2mDt-K6ONW1jA"
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          setStatus("success");
+          setFormData({ name: "", email: "", subject: "", message: "" });
+        },
+        (error) => {
+          console.error("FAILED...", error);
+          setStatus("error");
+        }
+      )
+      .finally(() => {
+        setLoading(false);
       });
-
-      if (response.ok) {
-        setStatus("success");
-        setFormData({ name: "", email: "", subject: "", message: "" });
-      } else {
-        setStatus("error");
-      }
-    } catch (error) {
-      console.error("Error sending message:", error);
-      setStatus("error");
-    } finally {
-      setLoading(false);
-    }
   };
 
   return (
@@ -70,11 +75,7 @@ const ContactPage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mt-2">
-            Contact Our{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600">
-              Rotary
-            </span>{" "}
-            Club
+            Contact Our Rotary Club
           </h2>
           <p className="mt-6 text-lg text-black max-w-2xl mx-auto">
             Have questions or want to get involved? Reach out to us through any
@@ -83,7 +84,6 @@ const ContactPage = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
             <div className="p-8">
               <h3 className="text-2xl font-semibold text-blue-800 mb-6">
@@ -94,7 +94,7 @@ const ContactPage = () => {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-medium text-gray-700 mb-1"
+                      className="block text-sm font-medium text-black mb-1"
                     >
                       Your Name
                     </label>
@@ -106,7 +106,7 @@ const ContactPage = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition"
-                      placeholder="John Doe"
+                      placeholder="Your Name"
                     />
                   </div>
                   <div>
@@ -124,14 +124,14 @@ const ContactPage = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition"
-                      placeholder="your@email.com"
+                      placeholder="Your Email Address"
                     />
                   </div>
                 </div>
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="block text-sm font-medium text-black mb-1"
                   >
                     Subject
                   </label>
@@ -143,13 +143,13 @@ const ContactPage = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition"
-                    placeholder="How can we help?"
+                    placeholder="Subject"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="block text-sm font-medium text-black mb-1"
                   >
                     Your Message
                   </label>
@@ -188,7 +188,6 @@ const ContactPage = () => {
             </div>
           </div>
 
-          
           <div className="space-y-8">
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <div className="p-8">
@@ -201,10 +200,10 @@ const ContactPage = () => {
                       <FiMapPin className="h-6 w-6" />
                     </div>
                     <div className="ml-4">
-                      <h4 className="text-lg font-medium text-gray-900">
+                      <h4 className="text-lg font-medium text-black">
                         Our Location
                       </h4>
-                      <p className="mt-1 text-gray-600">
+                      <p className="mt-1 text-black">
                         Hotel Topaz, Kandy, Sri Lanka
                       </p>
                     </div>
@@ -215,15 +214,15 @@ const ContactPage = () => {
                       <FiMail className="h-6 w-6" />
                     </div>
                     <div className="ml-4">
-                      <h4 className="text-lg font-medium text-gray-900">
+                      <h4 className="text-lg font-medium text-black">
                         Email Us
                       </h4>
-                      <p className="mt-1 text-gray-600">
+                      <p className="mt-1 text-black">
                         <a
-                          href="mailto:chandula@allinoneholdings.com"
+                          href="mailto:rckmpresident2015@yahoo.com"
                           className="hover:text-blue-700 transition"
                         >
-                          chandula@allinoneholdings.com
+                          rckmpresident2015@yahoo.com
                         </a>
                       </p>
                     </div>
@@ -234,7 +233,7 @@ const ContactPage = () => {
                       <FiPhone className="h-6 w-6" />
                     </div>
                     <div className="ml-4">
-                      <h4 className="text-lg font-medium text-gray-900">
+                      <h4 className="text-lg font-medium text-black">
                         Call Us
                       </h4>
                       <p className="mt-1 text-black">
@@ -249,8 +248,9 @@ const ContactPage = () => {
                   </div>
                 </div>
 
+                {/* Social Links */}
                 <div className="mt-8">
-                  <h4 className="text-lg font-medium text-gray-900 mb-4">
+                  <h4 className="text-lg font-medium text-black mb-4">
                     Connect With Us
                   </h4>
                   <div className="flex space-x-4">

@@ -348,8 +348,7 @@ const Projects = () => {
   ];
 
   return (
-    <div
-     className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50">
       <div
         className="relative pt-[100px] h-[calc(70vh-90px)] min-h-[500px] bg-cover bg-center overflow-hidden"
         style={{ backgroundImage: `url(${project})` }}
@@ -370,10 +369,7 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4">
-            Our{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">
-              Projects
-            </span>
+            Our Projects
           </h2>
           <p className="text-lg text-black max-w-2xl mx-auto">
             Transforming communities through impactful service initiatives
@@ -412,7 +408,7 @@ const Projects = () => {
                     {project.tags.map((tag, i) => (
                       <span
                         key={i}
-                        className="text-white px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-blue-500 to-indigo-600 shadow-sm hover:from-blue-600 hover:to-indigo-700 transition-colors duration-300"
+                        className="text-white px-3 py-1 rounded-full text-sm font-medium bg-blue-500 shadow-sm hover:from-blue-700 hover:to-indigo-700 transition-colors duration-300"
                       >
                         {tag}
                       </span>
@@ -429,10 +425,7 @@ const Projects = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-              Our{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">
-                Past projects
-              </span>
+              Our Past projects
             </h2>
             <p className="text-lg text-black max-w-3xl mx-auto">
               Journey of service and community transformation
@@ -446,7 +439,7 @@ const Projects = () => {
               {timelineEvents.map((event, index) => (
                 <div key={index} className="relative pl-16 md:pl-0 group">
                   <div
-                    className={`absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center shadow-lg md:left-1/2 md:-translate-x-1/2 transition-transform duration-300 group-hover:scale-110`}
+                    className={`absolute left-0 top-0 w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center shadow-lg md:left-1/2 md:-translate-x-1/2 transition-transform duration-300 group-hover:scale-110`}
                   >
                     {event.icon}
                   </div>

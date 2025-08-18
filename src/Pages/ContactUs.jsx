@@ -1,8 +1,8 @@
 import { Contact } from 'lucide-react';
 import React from 'react';
-import Navbar from '../Components/Navbar'; // Added import
-import ContactComponent from '../Components/Contact'; // Renamed import
-import Footer from '../components/Footer';
+import Navbar from '../Components/Navbar'; 
+import ContactComponent from '../Components/Contact'; 
+import Footer from '../Components/Footer';
 
 const ContactPage = () => {
   return (

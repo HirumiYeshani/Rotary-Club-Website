@@ -80,10 +80,7 @@ const ServicesSection = () => {
 
       <div className="max-w-7xl mx-auto px-4 text-center">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mt-2">
-          Our{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600">
-            Services
-          </span>
+          Our Services
         </h2>
         <p className="text-black text-lg max-w-3xl mx-auto mt-4">
           Explore a variety of impactful community and professional services

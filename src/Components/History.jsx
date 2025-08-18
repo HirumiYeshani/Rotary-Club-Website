@@ -40,11 +40,7 @@ const AboutUs = () => {
           <div className="mb-16">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mt-2">
-                Our{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600">
-                  Founding
-                </span>{" "}
-                And Charter
+                Our Founding And Charter
               </h2>
             </div>
 
@@ -93,10 +89,7 @@ const AboutUs = () => {
           >
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mt-2">
-                Our{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600">
-                  Founder
-                </span>
+                Our Founder
               </h2>
             </div>
 
@@ -146,10 +139,7 @@ const AboutUs = () => {
           >
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mt-2">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600">
-                  Key
-                </span>{" "}
-                Milestones
+                Key Milestones
               </h2>
             </div>
 
@@ -199,11 +189,7 @@ const AboutUs = () => {
           >
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mt-2">
-                Our{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600">
-                  Rotary
-                </span>{" "}
-                Values
+                Our Rotary Values
               </h2>
             </div>
 

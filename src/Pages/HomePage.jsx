@@ -6,7 +6,8 @@ import SecondSection from '../Components/SecondSection';
 import TimelineSection from '../Components/TimelineSection';
 import GetSection from '../Components/GetSection';
 import ServicesSection from '../Components/ServicesSection';
-import Footer from '../components/Footer';
+import Footer from '../Components/Footer';
+
 
 
 function HomePage() {
