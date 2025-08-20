@@ -163,7 +163,6 @@ const JoinUsPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
       <div
         className="relative pt-[100px] h-[calc(70vh-90px)] min-h-[500px] bg-cover bg-center overflow-hidden"
         style={{ backgroundImage: `url(${join})` }}
@@ -189,7 +188,7 @@ const JoinUsPage = () => {
         id="application"
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
       >
-        <h2 className="text-4xl font-bold text-black mb-8 text-center">
+        <h2 className="text-5xl font-bold text-black mb-8 text-center">
           Why Join Rotary
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -217,7 +216,7 @@ const JoinUsPage = () => {
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white p-8 rounded-xl shadow-lg">
-            <h2 className="text-4xl font-bold text-black mb-8 text-center">
+            <h2 className="text-5xl font-bold text-black mb-8 text-center">
               Become a Member
             </h2>
 
@@ -284,7 +283,7 @@ const JoinUsPage = () => {
         id="application"
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
       >
-        <h2 className="text-4xl font-bold text-black mb-12 text-center">
+        <h2 className="text-5xl font-bold text-black mb-12 text-center">
           What Our Members Say
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
@@ -312,7 +311,7 @@ const JoinUsPage = () => {
         className="bg-gray-100 py-16"
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-black mb-12 text-center">
+          <h2 className="text-5xl font-bold text-black mb-12 text-center">
             Frequently Asked Questions
           </h2>
           <div className="space-y-4">
