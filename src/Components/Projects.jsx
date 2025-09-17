@@ -357,7 +357,7 @@ const Projects = () => {
         <div className="relative h-full flex flex-col justify-center px-4 sm:px-6 lg:px-8 z-10">
           <div className="max-w-7xl mx-auto text-center">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white drop-shadow-lg">
-              <span className="block">Building Better Tomorrows</span>
+              <span className="block">Building A Better Tomorrow</span>
             </h1>
             <p className="mt-6 text-xl text-blue-100 max-w-3xl mx-auto">
               Hands United to Create Meaningful Change

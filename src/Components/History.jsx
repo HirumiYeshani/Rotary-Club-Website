@@ -2,7 +2,7 @@ import React from "react";
 import { motion as Motion } from "framer-motion";
 
 import history from "../assets/history.jpeg";
-import hemantha from "../assets/hemantha.jpeg";
+import joe from "../assets/joe.jpeg";
 
 const fadeUpVariant = {
   hidden: { opacity: 0, y: 40 },
@@ -98,7 +98,7 @@ const AboutUs = () => {
                 <div className="md:w-1/3 mb-6 md:mb-0 flex justify-center">
                   <div className="h-48 w-48 rounded-full bg-gray-200 overflow-hidden">
                     <img
-                      src={hemantha}
+                      src={joe}
                       alt="Rtn. Joe Paiva"
                       className="h-full w-full object-cover"
                     />
@@ -106,17 +106,15 @@ const AboutUs = () => {
                 </div>
                 <div className="md:w-2/3 md:pl-8">
                   <h3 className="text-2xl font-bold text-black mb-2">
-                    Rtn. Hemantha Weerasinghe
+                    Rtn. Joe Paiva
                   </h3>
                   <p className="text-black mb-4">
                     Originally a Rotarian from the Rotary Club of Kandy in 1984,
                     Rtn. Joe Paiva is regarded as the founder and pillar of the
-                    Kandy Metropolitan Club.
-                  </p>
-                  <div className="bg-blue-50 p-4 rounded-lg">
+                    Kandy Metropolitan Club.   <div className="bg-blue-50 p-4 rounded-lg">
                     <p className="text-black  mb-2">
-                      "Rotarian Rtn. Hemantha Weerasinghe, initially Secretary
-                      of Rotary Club of Kandy,emerged as the driving force
+                      "Rtn. Joe Paiva, initially Secretary
+                      of Rotary Club of Kandy (1992-1993), emerged as the driving force
                       behind the establishment of the Metropolitan club."
                     </p>
                     <p className="text-black">
@@ -124,6 +122,8 @@ const AboutUs = () => {
                       influential Assistant District Governor for District 3220.
                     </p>
                   </div>
+                  </p>
+               
                 </div>
               </div>
             </div>

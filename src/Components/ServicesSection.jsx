@@ -131,30 +131,36 @@ const ServicesSection = () => {
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
             <div>
-              <div className="text-4xl font-bold mb-2">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
                 {inView && <CountUp end={1164} duration={3} />}+
               </div>
-              <div className="text-sm opacity-80">Projects Completed</div>
+              <div className="text-xs sm:text-sm opacity-80">
+                Projects Completed
+              </div>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-2">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
                 {inView && <CountUp end={24} duration={3} />}+
               </div>
-              <div className="text-sm opacity-80">Members</div>
+              <div className="text-xs sm:text-sm opacity-80">Members</div>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-2">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
                 {inView && <CountUp end={5} duration={3} />}+
               </div>
-              <div className="text-sm opacity-80">Countries Reached</div>
+              <div className="text-xs sm:text-sm opacity-80">
+                Countries Reached
+              </div>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-2">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
                 {inView && (
                   <CountUp end={75000000} duration={3} separator="," />
                 )}
               </div>
-              <div className="text-sm opacity-80">Value of projects</div>
+              <div className="text-xs sm:text-sm opacity-80">
+                Value of projects
+              </div>
             </div>
           </div>
         </div>
